@@ -127,7 +127,6 @@ public class Movie implements Serializable {
         this.genre = genre;
     }
 
-
     @Override
     public int hashCode() {
         final int prime = 31;
