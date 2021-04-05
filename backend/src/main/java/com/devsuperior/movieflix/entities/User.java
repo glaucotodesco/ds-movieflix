@@ -5,12 +5,20 @@ package com.devsuperior.movieflix.entities;
  */
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name = "TB_USER")
@@ -23,10 +31,17 @@ public class User implements Serializable {
     private Long id;
 
     private String name;
-    
+
     private String email;
-    
+
     private String passaword;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "TB_USER_ROLE_role", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))
+    private Set<Role> roles = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews = new ArrayList<>();
 
     public User() {
     }
@@ -69,6 +84,22 @@ public class User implements Serializable {
     public void setPassaword(String passaword) {
         this.passaword = passaword;
     }
+    
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void addRole(Role role) {
+        roles.add(role);
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void addReviews(Review review) {
+        reviews.add(review);
+    }
 
     @Override
     public int hashCode() {
@@ -100,4 +131,6 @@ public class User implements Serializable {
         return "User [email=" + email + ", id=" + id + ", name=" + name + ", passaword=" + passaword + "]";
     }
 
+
+    
 }
