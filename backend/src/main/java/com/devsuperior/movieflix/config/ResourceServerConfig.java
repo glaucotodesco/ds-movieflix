@@ -43,7 +43,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         //@formatter:off
         http.authorizeRequests()
             .antMatchers(PUBLIC).permitAll()
-            .antMatchers(VISITOR_OR_MEMBER).hasAnyRole("VISITOR", "MEMBER")
+            .antMatchers(HttpMethod.GET,VISITOR_OR_MEMBER).hasAnyRole("VISITOR", "MEMBER")
             .anyRequest().authenticated();
         //@formatter:on
 

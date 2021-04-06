@@ -1,5 +1,5 @@
-insert  into  tb_role (authority)  values ('VISITOR');
-insert  into  tb_role (authority)  values ('MEMBER');
+insert  into  tb_role (authority)  values ('ROLE_VISITOR');
+insert  into  tb_role (authority)  values ('ROLE_MEMBER');
 
 insert into tb_user (name, email, passaword, role_id) values ('Bob', 'bob@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG',1);
 insert into tb_user (name, email, passaword, role_id) values ('Ana', 'ana@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG',2);
