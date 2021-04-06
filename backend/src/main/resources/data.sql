@@ -23,6 +23,7 @@ insert into  tb_movie (id_genre, title, sub_title, year, img_url, synoposis)  va
 insert into  tb_review (movie_id, text, user_id) values (1,'Filme Muito Bom', 2);
 insert into  tb_review (movie_id, text, user_id) values (4,'Melhor Filme do ano', 2);
 insert into  tb_review (movie_id, text, user_id) values (7,'Não gostei, não recomendo', 2);
+insert into  tb_review (movie_id, text, user_id) values (7,'Tive que ver pela segunda vez para entender', 2);
 
 
 
