@@ -14,8 +14,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
@@ -36,9 +35,9 @@ public class User implements Serializable {
 
     private String passaword;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "TB_USER_ROLE_role", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))
-    private Set<Role> roles = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "ROLE_ID")
+    private Role role;
 
     @OneToMany(mappedBy = "user")
     private List<Review> reviews = new ArrayList<>();
@@ -48,6 +47,12 @@ public class User implements Serializable {
 
     public User(Long id, String name, String email, String passaword) {
         this.id = id;
+        this.name = name;
+        this.email = email;
+        this.passaword = passaword;
+    }
+
+    public User(String name, String email, String passaword) {
         this.name = name;
         this.email = email;
         this.passaword = passaword;
@@ -85,12 +90,12 @@ public class User implements Serializable {
         this.passaword = passaword;
     }
     
-    public Set<Role> getRoles() {
-        return roles;
+    public Role getRole() {
+        return role;
     }
 
-    public void addRole(Role role) {
-        roles.add(role);
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public List<Review> getReviews() {
@@ -130,6 +135,8 @@ public class User implements Serializable {
     public String toString() {
         return "User [email=" + email + ", id=" + id + ", name=" + name + ", passaword=" + passaword + "]";
     }
+
+   
 
 
     

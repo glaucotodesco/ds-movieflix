@@ -27,11 +27,15 @@ public class Genre implements Serializable {
 
     private String name;
 
-    @OneToMany(mappedBy = "movie")
+    @OneToMany(mappedBy = "genre")
     private List<Movie> movies = new ArrayList<>();
 
     public Genre() {
 
+    }
+
+    public Genre(String name) {
+        this.name = name;
     }
 
     public Genre(Long id, String name) {

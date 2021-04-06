@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MovieflixApplication<movieflix>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.devsuperior.movieflix.MovieflixApplication",
+            "projectName": "movieflix",
+            "args": ""
+        }
+    ]
+}
