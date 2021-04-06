@@ -1,15 +1,10 @@
 package com.devsuperior.movieflix.services;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
 import com.devsuperior.movieflix.dto.GenreDTO;
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.repositories.GenreRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
