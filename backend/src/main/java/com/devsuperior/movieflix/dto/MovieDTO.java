@@ -22,11 +22,13 @@ public class MovieDTO implements Serializable{
 
     private String synoposis;
 
-    private List<ReviewDTO> reviews = new ArrayList<>();
-
+    private Long genreId;
     
+    private List<ReviewDTO> reviews = new ArrayList<>();
+   
+    public MovieDTO() { }
 
-    public MovieDTO(Movie entity) {
+    public MovieDTO(Movie entity, boolean loadReviews) {
          id         = entity.getId();
          title      = entity.getTitle();
          subTitle   = entity.getSubTitle();
@@ -34,9 +36,13 @@ public class MovieDTO implements Serializable{
          imgUrl     = entity.getImgUrl();
          synoposis  = entity.getSynoposis();
 
-         reviews.addAll(entity.getReviews()
+         genreId    = entity.getGenre().getId();
+
+        if(loadReviews){
+            reviews.addAll(entity.getReviews()
                               .stream()
                               .map(r -> new ReviewDTO(r)).collect(Collectors.toList()));
+        }
     }
 
     public Long getId() {
@@ -93,6 +99,14 @@ public class MovieDTO implements Serializable{
 
     public void setReviews(List<ReviewDTO> reviews) {
         this.reviews = reviews;
+    }
+
+    public Long getGenreId() {
+        return genreId;
+    }
+
+    public void setGenreId(Long genreId) {
+        this.genreId = genreId;
     }
 
 
