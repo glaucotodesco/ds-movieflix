@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.devsuperior.movieflix.dto.ReviewDTO;
+
 @Entity
 @Table(name = "TB_REVIEW")
 public class Review  implements Serializable {
@@ -30,12 +32,12 @@ public class Review  implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    private User user;
+    private User user = new User();
 
 
     @ManyToOne
     @JoinColumn(name = "MOVIE_ID")
-    private Movie movie;
+    private Movie movie = new Movie();
     
     public Review() {
      
@@ -49,6 +51,10 @@ public class Review  implements Serializable {
         this.id = id;
         this.text = text;
     }
+    public Review(ReviewDTO dto) {
+        this.text = dto.getText().trim();
+    }
+
     public Long getId() {
         return id;
     }
