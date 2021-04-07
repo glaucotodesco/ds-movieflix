@@ -5,23 +5,15 @@
 
 MovieFlix é uma aplicação full stack web e mobile construída durante o bootCamps DevSuperior [DevSuperior](https://devsuperior.com "Site da DevSuperior").
 
-A aplicação consiste em uma pesquisa de filmes, onde os dados são coletados no app mobile, e depois são listados no app web.
+A aplicação consiste em uma pesquisa de filmes através de uma aplicação Restful 
 
 # Tecnologias utilizadas
 ## Back end
 - Java
 - Spring Boot
-- JPA / Hibernate
+- JPA / Hibernate / H2
 - Maven
-## Front end
-- HTML / CSS / JS / TypeScript
-- ReactJS
-- React Native
-- Expo
-## Implantação em produção
-- Back end: Heroku
-- Front end web: Netlify
-- Banco de dados: Postgresql
+
 
 # Como executar o projeto
 
