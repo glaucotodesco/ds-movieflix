@@ -1,4 +1,4 @@
-# Big Game Survey 
+# MovieFlix - BootCamp
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/glaucotodesco/movieflix-backend-tests/blob/main/LICENSE) 
 
 # Sobre o projeto
