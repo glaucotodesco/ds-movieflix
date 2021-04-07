@@ -50,8 +50,8 @@ public class DataLoader implements CommandLineRunner{
 
             if(dataLoader){
 
-                    Role roleVisitor = new Role("VISITOR");
-                    Role roleMember  = new Role("MEMBER");
+                    Role roleVisitor = new Role("ROLE_VISITOR");
+                    Role roleMember  = new Role("ROLER_MEMBER");
 
                     roleRepository.save(roleMember);
                     roleRepository.save(roleVisitor);
