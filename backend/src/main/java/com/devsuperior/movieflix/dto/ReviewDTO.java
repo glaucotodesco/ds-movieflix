@@ -12,6 +12,10 @@ public class ReviewDTO implements Serializable{
 
     private String text;
 
+    public ReviewDTO() {
+    
+    }
+
     public ReviewDTO(Review entity) {
         this.id = entity.getId();
         this.text = entity.getText();

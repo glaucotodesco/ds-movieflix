@@ -2,7 +2,6 @@ package com.devsuperior.movieflix.resources.exceptions;
 
 import java.time.Instant;
 import javax.servlet.http.HttpServletRequest;
-import com.devsuperior.movieflix.services.exceptions.DatabaseException;
 import com.devsuperior.movieflix.services.exceptions.EntityNotFoundException;
 import com.devsuperior.movieflix.services.exceptions.ForbiddenException;
 import com.devsuperior.movieflix.services.exceptions.UnauthorizedException;
@@ -29,19 +28,7 @@ public class ResourceExceptionHandler {
         return ResponseEntity.status(status).body(err);
     }
 
-    @ExceptionHandler(DatabaseException.class)
-    public ResponseEntity<StandardError> databaseException(DatabaseException e, HttpServletRequest request) {
-        HttpStatus status = HttpStatus.BAD_REQUEST;
-        StandardError err = new StandardError();
-        err.setTimeStamp(Instant.now());
-        err.setStatus(status.value());
-        err.setError("Database exception");
-        err.setMessage(e.getMessage());
-        err.setPath(request.getRequestURI());
-
-        return ResponseEntity.status(status).body(err);
-    }
-
+ 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ValidationError> validationException(MethodArgumentNotValidException e,
             HttpServletRequest request) {
