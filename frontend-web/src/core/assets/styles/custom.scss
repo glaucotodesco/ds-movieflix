@@ -1,1 +1,15 @@
+$theme-colors: (
+    "primary" :#ffc700,
+    "secondary" : #E1E1E1 
+);
+
+
+$body-bg: #525252;
+$body-color: #fff;
+
 @import '~bootstrap/scss/bootstrap.scss';
+
+.form-control:focus {
+    background-color: #fff;
+    color: #000
+}
