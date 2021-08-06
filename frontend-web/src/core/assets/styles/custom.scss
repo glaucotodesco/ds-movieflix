@@ -3,9 +3,9 @@ $theme-colors: (
     "secondary" : #E1E1E1 
 );
 
-
 $body-bg: #525252;
 $body-color: #fff;
+$invalid-feedback: #FFF;
 
 @import '~bootstrap/scss/bootstrap.scss';
 

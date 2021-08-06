@@ -1,5 +1,6 @@
 import './styles.scss';
 import { ReactComponent as Banner } from 'core/assets/images/banner.svg';
+import Login from './components/Login';
 
 
 const Home = () => (
@@ -17,17 +18,7 @@ const Home = () => (
             </div>
         </div>
         <div className="row">
-            <div className="card-base home-login">
-                <div className="home-login-text">
-                    LOGIN
-                </div>
-                <input className="form-control input-base" placeholder="Email" />
-                <input className="form-control input-base" placeholder="Senha" />
-                <button className="btn btn-primary button-base btn-login">
-                    FAZER LOGIN
-                </button>
-            </div>
-
+            <Login />
         </div>
     </div>
 
