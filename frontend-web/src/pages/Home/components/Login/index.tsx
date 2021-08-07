@@ -1,18 +1,36 @@
+import { saveSessionData } from "core/utils/auth";
+import { makeLogin } from "core/utils/request";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useHistory} from "react-router-dom";
+import './styles.scss';
 
 type FormState = {
     username: string,
     password: string,
 };
 
+type LocationState ={
+    from: string;
+}
+
 
 const Login = () => {
 
-
+    const [hasError, setHasError] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm<FormState>();
-
+    const history = useHistory();
+    
     const onSubmit: SubmitHandler<FormState> = data => {
-        console.log(data);
+        makeLogin(data)
+        .then(response => {
+            saveSessionData(response.data);
+            history.push('/movies');
+            setHasError(false);
+        })
+        .catch(() =>
+            setHasError(true)
+        )
     }
 
     return (
@@ -20,6 +38,13 @@ const Login = () => {
             <div className="home-login-text">
                 LOGIN
             </div>
+
+            {hasError && (
+                <div className="home-error-login">
+                    Usuário ou senha inválidos!
+                </div>
+            )}
+
             <form onSubmit={handleSubmit(onSubmit)}>
                 
                 <input
