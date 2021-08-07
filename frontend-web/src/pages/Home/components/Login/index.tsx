@@ -2,7 +2,7 @@ import { saveSessionData } from "core/utils/auth";
 import { makeLogin } from "core/utils/request";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import './styles.scss';
 
 type FormState = {
@@ -10,7 +10,7 @@ type FormState = {
     password: string,
 };
 
-type LocationState ={
+type LocationState = {
     from: string;
 }
 
@@ -20,17 +20,17 @@ const Login = () => {
     const [hasError, setHasError] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm<FormState>();
     const history = useHistory();
-    
+
     const onSubmit: SubmitHandler<FormState> = data => {
         makeLogin(data)
-        .then(response => {
-            saveSessionData(response.data);
-            history.push('/movies');
-            setHasError(false);
-        })
-        .catch(() =>
-            setHasError(true)
-        )
+            .then(response => {
+                saveSessionData(response.data);
+                history.push('/movies');
+                setHasError(false);
+            })
+            .catch(() =>
+                setHasError(true)
+            )
     }
 
     return (
@@ -46,7 +46,7 @@ const Login = () => {
             )}
 
             <form onSubmit={handleSubmit(onSubmit)}>
-                
+
                 <input
                     type="email"
                     {...register("username", {
@@ -73,14 +73,16 @@ const Login = () => {
                     className="form-control input-base"
                     placeholder="Senha"
                 />
-                {errors.password&& (
+                {errors.password && (
                     <div className="d-block">
                         {errors.password.message}
                     </div>
                 )}
-                <button className="btn btn-primary button-base btn-login">
+
+                <button className="btn btn-primary button-base btn-login margin">
                     FAZER LOGIN
                 </button>
+
             </form>
         </div>
     )

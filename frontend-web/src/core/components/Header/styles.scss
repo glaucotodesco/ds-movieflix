@@ -1,5 +1,5 @@
 .header-main {
-    background-color: #FFC700;
+    background-color: #ffc700;
     height: 68px;
     padding-left: 49px;
     padding-right: 142px;
@@ -13,3 +13,17 @@
     color: #000000;
 }
 
+.home-btn-sair {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.015em;
+    color: #000000;
+    background-color: #ffc700;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+}

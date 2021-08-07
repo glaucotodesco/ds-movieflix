@@ -19,8 +19,7 @@ type LoginData = {
 
 export const makeRequest = ({ method = 'GET', url, data, params, headers }: RequestParams) => {
 
-    return axios(
-        {
+    return axios(  {
             method,
             url: `${BASE_URL}${url}`,
             data,
@@ -28,6 +27,7 @@ export const makeRequest = ({ method = 'GET', url, data, params, headers }: Requ
             headers
         }
     );
+    
 }
 
 export const makeLogin = (loginData: LoginData) => {
