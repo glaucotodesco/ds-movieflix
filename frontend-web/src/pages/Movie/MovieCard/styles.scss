@@ -2,6 +2,10 @@
     padding-top: 26px;
     width: 258px;
     height: 322px;
+
+    &:hover{
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.75);
+    }
 }
 
 .movie-card-data{
@@ -24,6 +28,7 @@
     letter-spacing: -0.015em;
     color: #FFC700;
 }
+
 
 
 .movie-card-description{

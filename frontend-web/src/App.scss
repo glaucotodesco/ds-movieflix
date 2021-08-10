@@ -14,11 +14,16 @@ h6 {
   font-weight: 700;
 }
 
+a, a:hover{
+   color: #fff;
+   text-decoration:none;
+}
+
+
 .card-base {
   background: #6c6c6c;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
- 
 }
 
 .card-base-center {

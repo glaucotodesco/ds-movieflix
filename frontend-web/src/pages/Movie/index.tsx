@@ -1,5 +1,5 @@
 import { MoviesResponse } from 'core/types/MoviesReponse';
-import { makePrivateRequest, makeRequest } from 'core/utils/request';
+import { makePrivateRequest } from 'core/utils/request';
 import Pagination from 'core/components/Pagination';
 import { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
@@ -28,7 +28,9 @@ const Movie = () => {
             <h1>Movies</h1>
             <div className="movie-catalog">
                 {moviesResponse?.content.map(movie => (
+                    <Link to={`/movies/${movie.id}`} key={movie.id}>
                         <MovieCard movie={movie}  key={movie.id}/>
+                    </Link>
                 ))
                 }
             </div>

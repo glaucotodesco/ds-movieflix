@@ -13,7 +13,7 @@ const Header = () => {
         setCurrentUser(currentUserData.user_name);
     }, [location]);
 
-    const handleLogout = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    const handleLogout = (event: React.MouseEvent<HTMLButtonElement,MouseEvent>) => {
         event.preventDefault();
         logout();
     }
@@ -26,9 +26,9 @@ const Header = () => {
             </h1>
 
             {currentUser && (
-                <a className="btn btn-secondary home-btn-sair" onClick={handleLogout} >
+                <button className="btn btn-secondary home-btn-sair" onClick={handleLogout} >
                     SAIR
-                </a>
+                </button>
             )}
         </div>
     )
