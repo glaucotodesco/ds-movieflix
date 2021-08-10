@@ -1,0 +1,13 @@
+.movie-container{
+    margin-top: 40px;
+    margin-left: 140px;
+    margin-right: 140px;
+}
+
+.movie-catalog {
+    margin-top: 43px;  
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 256px);
+    justify-content: space-between;
+    gap: 330px 30px;
+}

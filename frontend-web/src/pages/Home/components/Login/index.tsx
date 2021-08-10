@@ -10,9 +10,6 @@ type FormState = {
     password: string,
 };
 
-type LocationState = {
-    from: string;
-}
 
 
 const Login = () => {
@@ -34,7 +31,7 @@ const Login = () => {
     }
 
     return (
-        <div className="card-base home-login">
+        <div className="card-base home-card">
             <div className="home-login-text">
                 LOGIN
             </div>
@@ -79,7 +76,7 @@ const Login = () => {
                     </div>
                 )}
 
-                <button className="btn btn-primary button-base btn-login margin">
+                <button className="btn btn-primary button-base margin">
                     FAZER LOGIN
                 </button>
 
