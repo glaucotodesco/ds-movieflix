@@ -67,7 +67,7 @@ const Login = () => {
                     {...register("password", {
                         required: "Campo Obrigatório"
                     })}
-                    className="form-control input-base"
+                    className="form-control input-base mt-4"
                     placeholder="Senha"
                 />
                 {errors.password && (
