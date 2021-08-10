@@ -18,8 +18,7 @@ const Movie = () => {
             page: activePage,
             linesPerPage: linesPerPage
         };
-
-        console.log(params);
+     
         makePrivateRequest({ url: '/movies', params })
             .then(response => setMoviesResponse(response.data))
     }, [activePage]);
@@ -29,11 +28,7 @@ const Movie = () => {
             <h1>Movies</h1>
             <div className="movie-catalog">
                 {moviesResponse?.content.map(movie => (
-
-                    
                         <MovieCard movie={movie}  key={movie.id}/>
-                    
-
                 ))
                 }
             </div>

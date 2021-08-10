@@ -19,6 +19,8 @@ type LoginData = {
 
 export const makeRequest = ({ method = 'GET', url, data, params, headers }: RequestParams) => {
 
+    console.log(params);
+
     return axios(  {
             method,
             url: `${BASE_URL}${url}`,
@@ -30,14 +32,14 @@ export const makeRequest = ({ method = 'GET', url, data, params, headers }: Requ
     
 }
 
-export const makePrivateRequest = ({ method = 'GET', url, data }: RequestParams) => {
+export const makePrivateRequest = ({ method = 'GET', url, data, params }: RequestParams) => {
     const sessionData = getSessionData();
 
     const headers = {
         'Authorization': `Bearer ${sessionData.access_token}`
     }
-
-    return makeRequest({ method, url, data, headers });
+    
+    return makeRequest({ method, url, data, headers, params });
 }
 
 export const makeLogin = (loginData: LoginData) => {
