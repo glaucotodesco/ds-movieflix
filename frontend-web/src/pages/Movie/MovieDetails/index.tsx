@@ -64,7 +64,6 @@ const MovieDetails = () => {
                    reviews
                 </div>
             </div>
-
         </>
     )
 }
