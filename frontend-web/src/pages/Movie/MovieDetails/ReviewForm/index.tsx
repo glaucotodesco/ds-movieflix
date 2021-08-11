@@ -1,5 +1,5 @@
 import { makePrivateRequest } from 'core/utils/request';
-import { useForm } from 'react-hook-form';
+import { useForm, useFormState } from 'react-hook-form';
 import './styles.scss';
 
 type FormState = {
@@ -14,7 +14,7 @@ type Props = {
 
 const ReviewForm = ({ movieId, parenteCallBack }: Props) => {
 
-    const { register, handleSubmit, formState: { errors }, setValue, control } = useForm<FormState>();
+    const { register, handleSubmit, formState: { errors }, setValue, reset} = useForm<FormState>();
 
     const onSubmit = (formData: FormState) => {
 
@@ -26,8 +26,8 @@ const ReviewForm = ({ movieId, parenteCallBack }: Props) => {
             data
         })
         .then(() => {
-                parenteCallBack(true);
-                console.log('Review cadastrado')
+            parenteCallBack(true);
+            reset();
         })
         .catch(() => {
            console.log('Erro ao cadastrar um review');
