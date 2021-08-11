@@ -63,19 +63,20 @@ const MovieDetails = () => {
                 <ReviewForm movieId={movieId} parenteCallBack={updateReviews} />
             </div>
 
+            {
+                movie?.reviews?.length &&
+                <div className="movie-details-card">
+                    <div className="movie-reviews">
 
-            <div className="movie-details-card">
-                <div className="movie-reviews">
-
-                    {movie?.reviews.map(review => (
-                        <div className="movie-review-card" key={review.id}>
-                            <div className="movie-review-user d-flex align-items-center"> <Star className="me-2" /> {review.user.name}</div>
-                            <div className="movie-details-text" key={review.id}> {review.text} </div>
-                        </div>
-                    ))}
+                        {movie?.reviews.map(review => (
+                            <div className="movie-review-card" key={review.id}>
+                                <div className="movie-review-user d-flex align-items-center"> <Star className="me-2" /> {review.user.name}</div>
+                                <div className="movie-details-text" key={review.id}> {review.text} </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-
+            }
 
             <div className="movie-details-card">
             </div>
