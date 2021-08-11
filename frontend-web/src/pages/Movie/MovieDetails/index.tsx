@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ReactComponent as Star } from 'core/assets/images/star.svg';
 import './styles.scss';
+import ReviewForm from './ReviewForm';
 
 
 type ParamsType = {
@@ -16,11 +17,22 @@ const MovieDetails = () => {
 
     const { movieId } = useParams<ParamsType>();
     const [movie, setMovie] = useState<Movie>();
+    const [update, setUpdate] = useState<boolean>(false);
 
     useEffect(() => {
         makePrivateRequest({ url: `/movies/${movieId}` })
-            .then(response => setMovie(response.data))
-    }, [movieId]);
+            .then(
+                response => {
+                    setMovie(response.data);
+                    setUpdate(false);
+                }
+            )
+
+    }, [movieId, update]);
+
+    const updateReviews = (update: boolean) => {
+        setUpdate(true);
+    }
 
     return (
         <>
@@ -48,32 +60,30 @@ const MovieDetails = () => {
             </div>
 
             <div className="movie-details-card">
-                <div className="movie-avaliation">
-                    <input className="form-control input-avaliation input-base"></input>
-                    <div className="d-flex justify-content-center">
-                        <button className="btn btn-primary button-base btn-salvar-avaliation">
-                            SALVAR AVALIAÇÃO
-                        </button>
-                    </div>
-                </div>
+                <ReviewForm movieId={movieId} parenteCallBack={updateReviews} />
             </div>
+
 
             <div className="movie-details-card">
                 <div className="movie-reviews">
 
                     {movie?.reviews.map(review => (
-                        <div className="movie-review-card">
+                        <div className="movie-review-card" key={review.id}>
                             <div className="movie-review-user d-flex align-items-center"> <Star className="me-2" /> {review.user.name}</div>
                             <div className="movie-details-text" key={review.id}> {review.text} </div>
                         </div>
                     ))}
                 </div>
             </div>
+
+
             <div className="movie-details-card">
-                
             </div>
+
         </>
     )
 }
 
 export default MovieDetails;
+
+
