@@ -3,6 +3,7 @@ import { makePrivateRequest, makeRequest } from 'core/utils/request';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { ReactComponent as Star } from 'core/assets/images/star.svg';
 import './styles.scss';
 
 
@@ -16,9 +17,7 @@ const MovieDetails = () => {
     const { movieId } = useParams<ParamsType>();
     const [movie, setMovie] = useState<Movie>();
 
-
     useEffect(() => {
-
         makePrivateRequest({ url: `/movies/${movieId}` })
             .then(response => setMovie(response.data))
     }, [movieId]);
@@ -40,7 +39,7 @@ const MovieDetails = () => {
                         <div className="movie-details-subtitle">
                             {movie?.subTitle}
                         </div>
-                        <div className="movie-details-synoposis">
+                        <div className="movie-details-text">
                             {movie?.synoposis}
                         </div>
                     </div>
@@ -61,8 +60,17 @@ const MovieDetails = () => {
 
             <div className="movie-details-card">
                 <div className="movie-reviews">
-                   reviews
+
+                    {movie?.reviews.map(review => (
+                        <div className="movie-review-card">
+                            <div className="movie-review-user d-flex align-items-center"> <Star className="me-2" /> {review.user.name}</div>
+                            <div className="movie-details-text" key={review.id}> {review.text} </div>
+                        </div>
+                    ))}
                 </div>
+            </div>
+            <div className="movie-details-card">
+                
             </div>
         </>
     )
