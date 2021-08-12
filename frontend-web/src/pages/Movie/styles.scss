@@ -2,12 +2,24 @@
     margin-top: 40px;
     margin-left: 140px;
     margin-right: 140px;
+    display: flex;
+    justify-content: center;
 }
 
-.movie-catalog {
-    margin-top: 43px;  
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 256px);
+.movie-catalog-between {
     justify-content: space-between;
-    gap: 330px 30px;
+    display: flex;
+    width: 1220px;
+}
+
+.movie-catalog-evenly {
+    justify-content: space-evenly;
+    display: flex;
+    width: 1220px;
+}
+
+
+.movie-filter {
+    width: 1220px;
+    height: 80px
 }

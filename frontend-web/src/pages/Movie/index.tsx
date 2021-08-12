@@ -10,7 +10,9 @@ const Movie = () => {
 
     const [activePage, setActivePage] = useState(0);
     const [moviesResponse, setMoviesResponse] = useState<MoviesResponse>();
-    const linesPerPage: number = 12;
+    const [numberOfElements, setNumberOfElements] = useState<number>();
+
+    const linesPerPage: number = 4;
 
     useEffect(() => {
 
@@ -18,33 +20,45 @@ const Movie = () => {
             page: activePage,
             linesPerPage: linesPerPage
         };
-     
+
         makePrivateRequest({ url: '/movies', params })
-            .then(response => setMoviesResponse(response.data))
+            .then(response => {
+                setMoviesResponse(response.data)
+                setNumberOfElements(response.data.numberOfElements);
+                }
+            )
     }, [activePage]);
 
     return (
-        <div className="movie-container">
-            <h1>Movies</h1>
-            <div className="movie-catalog">
-                {moviesResponse?.content.map(movie => (
-                    <Link to={`/movies/${movie.id}`} key={movie.id}>
-                        <MovieCard movie={movie}  key={movie.id}/>
-                    </Link>
-                ))
-                }
+        <>
+            <div className="movie-container">
+                <div className="movie-filter card-base">
+                    filter
+                </div>
             </div>
 
-            {
-                moviesResponse &&
-                <Pagination
-                    totalPages={moviesResponse.totalPages}
-                    activePage={activePage}
-                    onChange={page => setActivePage(page)}
+            <div className="movie-container">
+                <div className= { numberOfElements === 4 ? "movie-catalog-between": "movie-catalog-evenly"} >
+                    {moviesResponse?.content.map(movie => (
+                        <Link to={`/movies/${movie.id}`} key={movie.id}>
+                            <MovieCard movie={movie} key={movie.id} />
+                        </Link>
+                    ))
+                    }
+                </div>
+            </div>
+            <div className="movie-container">
+                {
+                    moviesResponse &&
+                    <Pagination
+                        totalPages={moviesResponse.totalPages}
+                        activePage={activePage}
+                        onChange={page => setActivePage(page)}
 
-                />
-            }
-        </div>
+                    />
+                }
+            </div>
+        </>
     );
 };
 
