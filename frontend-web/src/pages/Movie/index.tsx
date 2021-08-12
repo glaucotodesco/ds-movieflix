@@ -11,7 +11,6 @@ const Movie = () => {
     const [activePage, setActivePage] = useState(0);
     const [moviesResponse, setMoviesResponse] = useState<MoviesResponse>();
     const [numberOfElements, setNumberOfElements] = useState<number>();
-
     const linesPerPage: number = 4;
 
     useEffect(() => {
