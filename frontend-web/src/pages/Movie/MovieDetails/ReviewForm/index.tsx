@@ -9,7 +9,7 @@ type FormState = {
 
 type Props = {
     movieId: string;
-    parenteCallBack: any;
+    parentCallBack: any;
 }
 
 const ReviewForm = ({ movieId, parentCallBack }: Props) => {
