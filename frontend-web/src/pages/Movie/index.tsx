@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
 import './styles.scss';
 import { Link } from 'react-router-dom';
+import MovieFilter from './MovieFilter';
 
 const Movie = () => {
 
@@ -30,10 +31,8 @@ const Movie = () => {
 
     return (
         <>
-            <div className="movie-container">
-                <div className="movie-filter card-base">
-                    filter
-                </div>
+            <div className="movie-filter-container">
+                <MovieFilter />
             </div>
 
             <div className="movie-container">
