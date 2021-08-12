@@ -17,22 +17,19 @@ const MovieDetails = () => {
 
     const { movieId } = useParams<ParamsType>();
     const [movie, setMovie] = useState<Movie>();
-    const [update, setUpdate] = useState<boolean>(false);
-
-    useEffect(() => {
+    
+    const fetchReviews = () => {
         makePrivateRequest({ url: `/movies/${movieId}` })
             .then(
                 response => {
                     setMovie(response.data);
-                    setUpdate(false);
                 }
             )
-
-    }, [movieId, update]);
-
-    const updateReviews = (update: boolean) => {
-        setUpdate(true);
     }
+
+    useEffect(() => {
+        fetchReviews();        
+    }, [movieId]);
 
     return (
         <>
@@ -60,7 +57,7 @@ const MovieDetails = () => {
             </div>
 
             <div className="movie-details-card">
-                <ReviewForm movieId={movieId} parenteCallBack={updateReviews} />
+                <ReviewForm movieId={movieId} parentCallBack={fetchReviews} />
             </div>
 
             {

@@ -12,7 +12,7 @@ type Props = {
     parenteCallBack: any;
 }
 
-const ReviewForm = ({ movieId, parenteCallBack }: Props) => {
+const ReviewForm = ({ movieId, parentCallBack }: Props) => {
 
     const { register, handleSubmit, formState: { errors }, setValue, reset} = useForm<FormState>();
 
@@ -26,7 +26,7 @@ const ReviewForm = ({ movieId, parenteCallBack }: Props) => {
             data
         })
         .then(() => {
-            parenteCallBack(true);
+            parentCallBack();
             reset();
         })
         .catch(() => {
