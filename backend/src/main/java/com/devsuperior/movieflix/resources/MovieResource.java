@@ -1,7 +1,5 @@
 package com.devsuperior.movieflix.resources;
 
-import javax.websocket.server.PathParam;
-
 import com.devsuperior.movieflix.dto.MovieDTO;
 import com.devsuperior.movieflix.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +21,7 @@ public class MovieResource {
 
     @GetMapping
     public ResponseEntity<Page<MovieDTO>> getMoviesPage(@RequestParam(value = "page", defaultValue = "0") Integer page,
-            @RequestParam(value = "size", defaultValue = "5") Integer size,
+            @RequestParam(value = "size", defaultValue = "4") Integer size,
             @RequestParam(value = "genreId", defaultValue = "0") Long genreId) {
 
         PageRequest pageRequest = PageRequest.of(page, size);
