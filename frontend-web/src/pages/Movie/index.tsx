@@ -1,12 +1,20 @@
+
+import { useEffect, useState } from 'react';
+import { Link} from 'react-router-dom';
+
 import { MoviesResponse } from 'core/types/MoviesReponse';
 import { makePrivateRequest } from 'core/utils/request';
+
 import Pagination from 'core/components/Pagination';
-import { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
-import './styles.scss';
-import { Link, useParams } from 'react-router-dom';
 import MovieFilter from './MovieFilter';
+
 import { Genre } from 'core/types/Genre';
+
+import './styles.scss';
+
+
+
 
 const Movie = () => {
 

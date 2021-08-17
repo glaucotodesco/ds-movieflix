@@ -1,5 +1,5 @@
 import { makePrivateRequest } from 'core/utils/request';
-import { useForm, useFormState } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import './styles.scss';
 
 type FormState = {
@@ -14,7 +14,7 @@ type Props = {
 
 const ReviewForm = ({ movieId, parentCallBack }: Props) => {
 
-    const { register, handleSubmit, formState: { errors }, setValue, reset} = useForm<FormState>();
+    const { register, handleSubmit, formState: { errors }, reset} = useForm<FormState>();
 
     const onSubmit = (formData: FormState) => {
 

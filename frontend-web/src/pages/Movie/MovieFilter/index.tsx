@@ -1,13 +1,6 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import Select from "react-select";
-import { makePrivateRequest } from "core/utils/request";
 import { Genre } from "core/types/Genre";
 import './styles.scss';
-
-type FormState = {
-    genres: Genre,
-};
 
 type Props = {
     onChangeGenres: any;

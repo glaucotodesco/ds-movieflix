@@ -1,5 +1,5 @@
 import { Movie } from 'core/types/Movie';
-import { makePrivateRequest, makeRequest } from 'core/utils/request';
+import { makePrivateRequest} from 'core/utils/request';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -26,10 +26,10 @@ const MovieDetails = () => {
                 }
             )
     }
-
+   
     useEffect(() => {
         fetchReviews();        
-    }, [movieId]);
+    }, [movieId, fetchReviews]);
 
     return (
         <>
