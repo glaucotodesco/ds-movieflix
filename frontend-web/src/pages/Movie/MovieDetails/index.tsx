@@ -1,6 +1,6 @@
 import { Movie } from 'core/types/Movie';
 import { makePrivateRequest} from 'core/utils/request';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ReactComponent as Star } from 'core/assets/images/star.svg';
@@ -18,14 +18,15 @@ const MovieDetails = () => {
     const { movieId } = useParams<ParamsType>();
     const [movie, setMovie] = useState<Movie>();
     
-    const fetchReviews = () => {
+    const fetchReviews = useCallback(() => {
+    
         makePrivateRequest({ url: `/movies/${movieId}` })
             .then(
                 response => {
                     setMovie(response.data);
                 }
             )
-    }
+    },[]);
    
     useEffect(() => {
         fetchReviews();        
