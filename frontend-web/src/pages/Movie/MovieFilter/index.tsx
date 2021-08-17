@@ -1,21 +1,36 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import Select from "react-select";
+
+import { makePrivateRequest } from "core/utils/request";
+import { Genre } from "core/types/Genre";
 import './styles.scss';
 
 
-const options = [
-        {value: 'Terror1', label:'Terror1' },
-        {value: 'Terror2', label:'Terror2' },
-        {value: 'Terror3', label:'Terror3' }
-]
 
+const MovieFilter = () => {
 
+    const [genres, setGenres] = useState<Genre[]>([]);
 
-const MovieFilter = ( ) => (
-    <div className="movie-filter card-base">
-       <div className="select-item-size" >
-            <Select options={options} classNamePrefix="movie-filter"/>
-       </div>  
-    </div>
-)
+    useEffect(() => {
+        makePrivateRequest({ url: '/genres' })
+            .then(
+                response => {
+                    setGenres(response.data);
+                }
+            )
+    }, []);
+
+    return (
+        <div className="movie-filter card-base">
+            <div className="select-item-size" >
+                <Select options={genres} 
+                        getOptionLabel={ (option: Genre) => option.name}
+                        getOptionValue={ (option: Genre) => String(option.id)}
+                        classNamePrefix="category-select" />
+            </div>
+        </div>
+    )
+}
 
 export default MovieFilter;
