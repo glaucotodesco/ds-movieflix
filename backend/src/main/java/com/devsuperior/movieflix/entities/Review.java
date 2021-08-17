@@ -19,10 +19,9 @@ import com.devsuperior.movieflix.dto.ReviewDTO;
 
 @Entity
 @Table(name = "TB_REVIEW")
-public class Review  implements Serializable {
+public class Review implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -34,15 +33,14 @@ public class Review  implements Serializable {
     @JoinColumn(name = "USER_ID")
     private User user = new User();
 
-
     @ManyToOne
     @JoinColumn(name = "MOVIE_ID")
     private Movie movie = new Movie();
-    
+
     public Review() {
-     
+
     }
-    
+
     public Review(String text) {
         this.text = text;
     }
@@ -51,6 +49,7 @@ public class Review  implements Serializable {
         this.id = id;
         this.text = text;
     }
+
     public Review(ReviewDTO dto) {
         this.text = dto.getText().trim();
     }
@@ -58,12 +57,15 @@ public class Review  implements Serializable {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getText() {
         return text;
     }
+
     public void setText(String text) {
         this.text = text;
     }
@@ -71,6 +73,7 @@ public class Review  implements Serializable {
     public User getUser() {
         return user;
     }
+
     public void setUser(User user) {
         this.user = user;
     }
@@ -90,6 +93,7 @@ public class Review  implements Serializable {
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -106,16 +110,10 @@ public class Review  implements Serializable {
             return false;
         return true;
     }
+
     @Override
     public String toString() {
         return "Review [id=" + id + ", text=" + text + "]";
     }
 
-  
-
-    
-
-    
-
-    
 }
