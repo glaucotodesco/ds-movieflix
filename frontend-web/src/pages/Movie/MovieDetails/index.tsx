@@ -26,7 +26,7 @@ const MovieDetails = () => {
                     setMovie(response.data);
                 }
             )
-    },[]);
+    },[movieId]);
    
     useEffect(() => {
         fetchReviews();        
