@@ -55,6 +55,7 @@ const Movie = () => {
 
 
     const onChangeGenre = (genre: Genre) => {
+        setActivePage(0);
         setGenreId(genre?.id);
     }
 
