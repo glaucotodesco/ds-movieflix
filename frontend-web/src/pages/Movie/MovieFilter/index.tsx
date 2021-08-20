@@ -24,6 +24,7 @@ const MovieFilter = ({ genres, onChangeGenres }: Props) => {
                         classNamePrefix="genre-select"
                         placeholder="Gêneros"
                         onChange={(val) => onChange(val)}
+                        isClearable
                     />
                 </form>
             </div>

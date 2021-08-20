@@ -55,7 +55,7 @@ const Movie = () => {
 
 
     const onChangeGenre = (genre: Genre) => {
-        setGenreId(genre.id);
+        setGenreId(genre?.id);
     }
 
     return (
