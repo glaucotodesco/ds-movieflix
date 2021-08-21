@@ -20,7 +20,8 @@ public class MovieResource {
     private MovieService service;
 
     @GetMapping
-    public ResponseEntity<Page<MovieDTO>> getMoviesPage(@RequestParam(value = "page", defaultValue = "0") Integer page,
+    public ResponseEntity<Page<MovieDTO>> getMoviesPage(
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
             @RequestParam(value = "size", defaultValue = "4") Integer size,
             @RequestParam(value = "genreId", defaultValue = "0") Long genreId) {
 
