@@ -2,6 +2,7 @@ import axios, { Method } from "axios";
 import { CLIENT_ID, CLIENT_SECRET, getSessionData } from './auth';
 import qs from 'qs';
 
+
 const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080';
 
 type RequestParams = {
