@@ -7,12 +7,19 @@ MovieFlix é uma aplicação full stack web e mobile construída durante o bootC
 
 A aplicação consiste em uma pesquisa de filmes através de uma aplicação Restful 
 
+# Link da Aplicação
+https://ds-movieflix.netlify.app/
+
 # Tecnologias utilizadas
-## Back end
+## Backend
 - Java
 - Spring Boot
 - JPA / Hibernate / H2
 - Maven
+## Frontend
+- React
+- React Hook Forms
+- BootStrap
 
 
 # Como executar o projeto
