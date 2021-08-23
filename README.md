@@ -9,6 +9,7 @@ A aplicação consiste em uma pesquisa de filmes através de uma aplicação Res
 
 # Link da Aplicação
 https://ds-movieflix.netlify.app/
+
 Usuário: ana@gmail.com
 Senha: 123456
 
