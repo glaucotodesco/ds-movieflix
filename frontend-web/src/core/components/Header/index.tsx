@@ -13,7 +13,7 @@ const Header = () => {
         setCurrentUser(currentUserData.user_name);
     }, [location]);
 
-    const handleLogout = (event: React.MouseEvent<HTMLButtonElement,MouseEvent>) => {
+    const handleLogout = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
         logout();
     }
@@ -21,9 +21,9 @@ const Header = () => {
     return (
         <div className="header-main">
 
-            <h1 className="header-title col-10">
+            <div className="header-title">
                 MovieFlix
-            </h1>
+            </div>
 
             {currentUser && (
                 <button className="btn btn-secondary home-btn-sair" onClick={handleLogout} >
