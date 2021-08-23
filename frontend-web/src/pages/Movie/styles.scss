@@ -1,5 +1,4 @@
 .movie-container{
-    margin-top: 40px;
     margin-left: 140px;
     margin-right: 140px;
     display: flex;
@@ -14,16 +13,11 @@
     justify-content: center;
 }
 
-.movie-catalog-between {
+.movie-catalog{
+    width: 1220px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 258px);
     justify-content: space-between;
-    display: flex;
-    width: 1220px;
-}
-
-.movie-catalog-evenly {
-    justify-content: space-evenly;
-    display: flex;
-    width: 1220px;
 }
 
 

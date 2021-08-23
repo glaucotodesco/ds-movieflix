@@ -66,7 +66,7 @@ const Movie = () => {
             </div>
 
             <div className="movie-container">
-                <div className= { numberOfElements === 4 ? "movie-catalog-between": "movie-catalog-evenly"} >
+                <div className= "movie-catalog" >
                     {moviesResponse?.content.map(movie => (
                         <Link to={`/movies/${movie.id}`} key={movie.id}>
                             <MovieCard movie={movie} key={movie.id} />
