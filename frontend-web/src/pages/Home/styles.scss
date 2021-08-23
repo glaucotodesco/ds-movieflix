@@ -1,7 +1,19 @@
+@media (max-width: 900px) {
+    /* desktop CSS: hide .mobile div */
+    .home-logo {
+       display: none;
+    }
+    .home-card {
+        width: 300px !important;
+        height: 464px !important;
+    }
+}
+
 .home-container {
     display: flex;
-    justify-content: center;
-    margin-left: 70px;
+    justify-content:space-evenly;
+    margin-left: 0px;
+    margin-left: 0px;
     margin-top: 40px;
 }
 
@@ -25,4 +37,3 @@
 .home-banner {
     margin-top: 51px;
 }
-

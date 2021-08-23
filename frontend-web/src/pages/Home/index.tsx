@@ -19,7 +19,8 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <div className="row col-3">
+            
+            <div className="home-logo">
                 <div className="home-title">
                     Avalie Filmes
                 </div>
@@ -33,18 +34,18 @@ const Home = () => {
             </div>
 
 
-            <div className="row">
-                {!currentUser && (
+
+            {!currentUser &&
+                <div className="row">
                     <Login />
-                )}
-            </div>
+                </div>
+            }
 
-            <div className="row">
-                { currentUser && (
+            {currentUser &&
+                <div className="">
                     <Logged />
-                )}
-            </div>
-
+                </div>
+            }
 
         </div>
 
