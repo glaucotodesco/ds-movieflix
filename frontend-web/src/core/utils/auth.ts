@@ -12,7 +12,7 @@ type LoginResponse = {
     userFirstName: string;
 }
 
-export type Role = 'ROLE_OPERATOR' | 'ROLE_ADMIN';
+export type Role = 'ROLE_VISITOR' | 'ROLE_MEMBER';
 
 type AccessToken = {
     exp: number;

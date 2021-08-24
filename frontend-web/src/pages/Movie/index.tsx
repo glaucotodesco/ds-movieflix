@@ -42,11 +42,7 @@ const Movie = () => {
         makePrivateRequest({ url: '/genres' })
             .then(
                 response => {
-                    const merged = [
-                        ...[{"id": 0, "name": "TODOS"}],
-                        ...response.data
-                    ]
-                    setGenres(merged);
+                  setGenres(response.data);
                 }
             )
     }, []);
