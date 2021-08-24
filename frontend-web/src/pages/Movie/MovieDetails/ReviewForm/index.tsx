@@ -14,7 +14,7 @@ type Props = {
 
 const ReviewForm = ({ movieId, parentCallBack }: Props) => {
 
-    const { register, handleSubmit, formState: { errors }, reset} = useForm<FormState>();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormState>();
 
     const onSubmit = (formData: FormState) => {
 
@@ -25,40 +25,41 @@ const ReviewForm = ({ movieId, parentCallBack }: Props) => {
             method: 'POST',
             data
         })
-        .then(() => {
-            parentCallBack();
-            reset();
-        })
-        .catch(() => {
-           console.log('Erro ao cadastrar um review');
-        });
+            .then(() => {
+                parentCallBack();
+                reset();
+            })
+            .catch(() => {
+                console.log('Erro ao cadastrar um review');
+            });
     }
 
     return (
 
         <div className="movie-avaliation">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input className="form-control input-avaliation input-base"
+                <div className="d-flex justify-content-center">
+                    <input className="form-control input-avaliation input-base"
 
-                    {...register("text", {
-                        required: "Campo Obrigatório",
-                    })}
+                        {...register("text", {
+                            required: "Campo Obrigatório",
+                        })}
 
-                    name="text"
-                    type="text"
-                    placeholder="Deixe a sua avaliação aqui"
-                    autoComplete="off"
+                        name="text"
+                        type="text"
+                        placeholder="Deixe a sua avaliação aqui"
+                        autoComplete="off"
 
 
-                >
-                </input>
+                    >
+                    </input>
 
-                {errors.text && (
-                    <div className="d-block">
-                        {errors.text.message}
-                    </div>
-                )}
-
+                    {errors.text && (
+                        <div className="d-block">
+                            {errors.text.message}
+                        </div>
+                    )}
+                </div>
                 <div className="d-flex justify-content-center">
                     <button className="btn btn-primary button-base btn-salvar-avaliation">
                         SALVAR AVALIAÇÃO

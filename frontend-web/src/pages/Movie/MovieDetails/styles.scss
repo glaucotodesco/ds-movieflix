@@ -1,3 +1,57 @@
+@media (max-width: 1152px) {
+    /* desktop CSS: hide .mobile div */
+    .movie-details {
+        flex-direction: column;
+        height: auto !important;
+        margin: 20px 10px !important;
+        padding: 0 !important;
+    }
+    .movie-details-info {
+        width: 95% !important;
+        margin: 10px auto !important;
+    }
+    .movie-details-img {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 20px !important;
+    }
+
+    .movie-details-card {
+        margin: 0px !important;
+    }
+}
+
+@media (max-width: 560px) {
+    .movie-details-img {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+
+    .movie-review-card {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+
+    .movie-details-text {
+        font-size: 16px !important;
+    }
+
+    .movie-details-title {
+        font-size: 20px !important;
+    }
+
+    .movie-details-year {
+        font-size: 16px !important;
+    }
+    .movie-details-subtitle {
+        font-size: 14px !important;
+    }
+
+    .movie-details-text{
+        font-size: 16px !important;
+    }
+}
+
 .movie-details-card {
     display: flex;
     justify-content: center;
@@ -8,11 +62,20 @@
     width: 1120px;
     height: 510px;
     padding: 40px;
+    display: flex;
+}
+.movie-details-info {
+    margin-left: 20px;
+    width: 50%;
 }
 
 .movie-details-img {
-    width: 500px;
-    height: 314px;
+    margin-right: 10px;
+}
+
+.movie-img {
+    width: 100%;
+    max-width: 511px;
 }
 
 .movie-details-title {
@@ -53,20 +116,6 @@
     margin-top: 8px;
 }
 
-.movie-details-info {
-    margin-left: 20px;
-    margin-left: 0px;
-}
-
-.movie-avaliation {
-    background: #6c6c6c;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-    width: 1120px;
-    height: 203px;
-    padding: 40px;
-}
-
 .movie-reviews {
     background: #6c6c6c;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
@@ -74,17 +123,8 @@
     width: 1120px;
     height: auto;
     padding-top: 10px;
-}
-
-.input-avaliation {
-    width: 100%;
-    height: 50px;
-}
-
-.btn-salvar-avaliation {
-    margin-top: 25px;
-    width: 400px;
-    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .movie-review-card {

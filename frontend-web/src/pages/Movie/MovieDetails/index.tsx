@@ -35,11 +35,11 @@ const MovieDetails = () => {
     return (
         <>
             <div className="movie-details-card">
-                <div className="movie-details card-base d-flex" >
-                    <div className="col-6">
-                        <img src={movie?.imgUrl} alt={movie?.title} className="movie-details-img" />
+                <div className="movie-details card-base" >
+                    <div className="movie-details-img">
+                        <img src={movie?.imgUrl} alt={movie?.title} className="movie-img" />
                     </div>
-                    <div className="movie-details-info col-6">
+                    <div className="movie-details-info">
                         <div className="movie-details-title">
                             {movie?.title}
                         </div>
@@ -56,6 +56,7 @@ const MovieDetails = () => {
 
                 </div>
             </div>
+
 
             <div className="movie-details-card">
                 <ReviewForm movieId={movieId} parentCallBack={fetchReviews} />
@@ -76,8 +77,7 @@ const MovieDetails = () => {
                 </div>
             }
 
-            <div className="movie-details-card">
-            </div>
+           
 
         </>
     )
