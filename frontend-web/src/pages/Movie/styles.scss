@@ -1,3 +1,15 @@
+@media (max-width: 796px){
+    .movie-catalog{
+        justify-content:center;
+     
+    }
+    .movie-container{
+        width: 258px !important;
+        margin: auto !important;
+    }  
+}
+
+
 .movie-container{
     margin-left: 140px;
     margin-right: 140px;
@@ -20,8 +32,4 @@
     justify-content: space-between;
 }
 
-.movie-filter {
-    width: 1220px;
-    height: 80px;
-}
- 
+

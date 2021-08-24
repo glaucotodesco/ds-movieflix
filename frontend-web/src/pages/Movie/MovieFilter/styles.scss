@@ -1,3 +1,16 @@
+@media (max-width: 796px){
+    .movie-filter {
+        width: 260px !important;
+    }    
+}
+
+
+.movie-filter {
+    width: 1220px;
+    height: 80px;
+}
+ 
+
 .genre-select__indicator-separator{
     display: none;
 }
