@@ -53,7 +53,8 @@ const ReviewForm = ({ movieId, parentCallBack }: Props) => {
 
                     >
                     </input>
-
+                </div>
+                <div className="d-flex justify-content-center">
                     {errors.text && (
                         <div className="d-block">
                             {errors.text.message}
