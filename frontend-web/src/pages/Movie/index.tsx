@@ -22,7 +22,6 @@ const Movie = () => {
     const [genreId, setGenreId] = useState(0);
     const [genres, setGenres] = useState<Genre []>([]);
     const [moviesResponse, setMoviesResponse] = useState<MoviesResponse>();
-    const [numberOfElements, setNumberOfElements] = useState<number>();
     const linesPerPage: number = 4;
 
     useEffect(() => {
@@ -35,7 +34,6 @@ const Movie = () => {
         makePrivateRequest({ url: '/movies', params })
             .then(response => {
                 setMoviesResponse(response.data)
-                setNumberOfElements(response.data.numberOfElements);
                 }
             )
     }, [activePage,genreId]);
