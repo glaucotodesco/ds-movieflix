@@ -66,7 +66,7 @@ export default function Login() {
                                 }
                             }
                         />
-                    </View>
+                 
                     <TouchableOpacity 
                         style={loginPage.loginButton} 
                         activeOpacity={0.8}
@@ -74,6 +74,7 @@ export default function Login() {
                     >
                         <Text style={text.loginButtonTitle}>FAZER LOGIN</Text>
                     </TouchableOpacity>
+                    </View>
                 </View>
             </View>
         </View>

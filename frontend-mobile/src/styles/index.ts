@@ -12,32 +12,31 @@ const colors = {
 
 const text = StyleSheet.create({
     loginTitle: {
+        fontFamily: 'OpenSans_400Regular',
         fontSize: 36,
-        fontWeight: "normal",
         color: colors.light,
         lineHeight: 49,
         textAlign: "center",
         letterSpacing: 1,
         marginBottom: 40,
-        fontFamily: "Open Sans"
+      
     },
     loginButtonTitle :{
-        fontWeight: "bold",
+        fontFamily: 'OpenSans_700Bold',
         fontSize: 20,
-        fontStyle: "normal",
         lineHeight: 27
     },
     headerTitle :{
-        fontWeight: "bold",
         fontSize: 24,
         lineHeight: 33,
         color: colors.dark,
-        marginLeft: 18
+        marginLeft: 18,
+        fontFamily: 'OpenSans_700Bold'
     },
     logoutButtonTitle : {
-        fontStyle: "normal",
+        fontFamily: 'OpenSans_700Bold',
         fontSize: 14,
-        fontWeight: "bold",
+       
         lineHeight: 19,
         color: colors.dark
     }
@@ -71,7 +70,7 @@ const theme = StyleSheet.create({
     },
  
     textInput: {
-        width: 265,
+        width: "100%",
         height: 47,
         borderWidth: 1,
         borderColor: colors.border,
@@ -79,6 +78,9 @@ const theme = StyleSheet.create({
         padding: 10,
         backgroundColor: colors.light,
         marginBottom: 20,
+        fontFamily: 'OpenSans_400Regular',
+        fontSize: 16,
+        color: colors.medium
         
     
     },
@@ -101,6 +103,7 @@ const loginPage = StyleSheet.create({
     form :{
         paddingTop: 60,
         justifyContent: "space-around",
+        width: "92%"
     },
     inputContainer:{
         marginBottom: 36
@@ -108,14 +111,13 @@ const loginPage = StyleSheet.create({
     loginButton :{
         backgroundColor: colors.primary,
         height: 50,
-        width: 266,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 4,
+        marginTop: 40
     },
 });
-
 
 
 export  {colors, theme, loginPage, text};
