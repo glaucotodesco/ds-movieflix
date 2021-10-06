@@ -20,9 +20,8 @@ import {
     
     if (!fontsLoaded) {
       return (
-        <View>
-          <Text>Loading</Text>
-        </View>
+        <>
+        </>
       )
     }
     else {

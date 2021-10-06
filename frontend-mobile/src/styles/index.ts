@@ -66,9 +66,24 @@ const theme = StyleSheet.create({
             height: 4
         },
         shadowOpacity: 0.25,
-        shadowRadius: 3.84
+        shadowRadius: 3.84,
+        marginBottom: 20
     },
- 
+    movieCard :{
+        backgroundColor: colors.card,
+        height: 300,
+        width: "100%",
+        borderRadius: 4,
+        alignItems: "center",
+        shadowColor: colors.dark,
+        shadowOffset: {
+            width: 0,
+            height: 4
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        marginBottom: 20
+    },
     textInput: {
         width: "100%",
         height: 47,
@@ -81,8 +96,6 @@ const theme = StyleSheet.create({
         fontFamily: 'OpenSans_400Regular',
         fontSize: 16,
         color: colors.medium
-        
-    
     },
     logoutButton :{
         backgroundColor: colors.primary,
@@ -96,6 +109,19 @@ const theme = StyleSheet.create({
         borderColor: colors.dark,
         marginRight: 10
     },
+    movieImg : {
+        width: 300,
+        height: 164
+    },
+    scrollContainer : {
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: colors.backGround,
+        paddingTop: 20,
+        paddingBottom: 33,
+        paddingLeft: 10,
+        paddingRight: 10,
+    }
 });
 
 

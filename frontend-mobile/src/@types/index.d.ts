@@ -1,4 +1,3 @@
-export type AuthProps = {
-    username: string;
-    password: string;
-}
+declare module "*.png";
+
+
