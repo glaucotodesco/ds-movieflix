@@ -2,11 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
-
-
-import { AuthProps } from "../@types";
+import { AuthProps } from '../@types/AuthProps';
 import { isAuthenticated, login } from "../services/auth";
-
 import { theme, loginPage, text } from '../styles';
 
 export default function Login() {
@@ -15,8 +12,8 @@ export default function Login() {
     const [authenticaded, setAuthenticated] = useState(false);
     const [userInfo, setUserInfo] = useState <AuthProps> (
         {
-            username: "",
-            password: ""
+            username: "ana@gmail.com",
+            password: "123456"
         }
     );
 

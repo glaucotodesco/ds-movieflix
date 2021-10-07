@@ -1,4 +1,9 @@
-import {StyleSheet} from "react-native";
+import {Dimensions, StyleSheet} from "react-native";
+import { color } from "react-native-reanimated";
+
+const dimensions = Dimensions.get('window');
+const imageHeight = Math.round(dimensions.width * 9 / 16);
+const imageWidth = dimensions.width;
 
 const colors = {
     primary: "#FFC700",
@@ -39,6 +44,24 @@ const text = StyleSheet.create({
        
         lineHeight: 19,
         color: colors.dark
+    },
+    movieTitle : {
+        fontFamily: 'OpenSans_700Bold',
+        fontSize: 20,
+        lineHeight: 27,
+        color: colors.light,
+    },
+    movieYear : {
+        fontFamily: 'OpenSans_700Bold',
+        fontSize: 16,
+        lineHeight: 22,
+        color: colors.primary
+    },
+    movieSubTitle : {
+        fontFamily: 'OpenSans_400Regular',
+        fontSize: 14,
+        lineHeight: 19,
+        color: colors.light
     }
 });
 
@@ -71,7 +94,7 @@ const theme = StyleSheet.create({
     },
     movieCard :{
         backgroundColor: colors.card,
-        height: 300,
+        height: imageHeight + 150,
         width: "100%",
         borderRadius: 4,
         alignItems: "center",
@@ -110,8 +133,10 @@ const theme = StyleSheet.create({
         marginRight: 10
     },
     movieImg : {
-        width: 300,
-        height: 164
+        marginTop: 26,
+        width: imageWidth-20,
+        height: imageHeight,
+        resizeMode: 'stretch',
     },
     scrollContainer : {
         justifyContent: "center",
@@ -121,6 +146,11 @@ const theme = StyleSheet.create({
         paddingBottom: 33,
         paddingLeft: 10,
         paddingRight: 10,
+        
+    },
+    movieTextContainer :{
+        padding: 10,
+        height: "100%"
     }
 });
 

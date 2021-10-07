@@ -1,8 +1,7 @@
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import queryString, { Stringifiable } from "query-string";
-
-import { AuthProps } from '../@types';
+import { AuthProps } from "../@types/AuthProps";
 import { api, TOKEN } from './index';
 
 type response = {
@@ -54,4 +53,9 @@ export async function logout() {
     } catch (error) {
         console.warn(error)
     }
+}
+
+export async function userToken() {
+    const token = await AsyncStorage.getItem("@token");
+    return token;
 }
