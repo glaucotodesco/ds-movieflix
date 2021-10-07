@@ -63,7 +63,22 @@ const text = StyleSheet.create({
         fontSize: 14,
         lineHeight: 19,
         color: colors.light
-    }
+    },
+    modalItem :{
+        fontFamily: 'OpenSans_400Regular',
+        fontSize: 16,
+        lineHeight: 22,
+        color: colors.light
+    },
+    modalClose :{
+        fontFamily: 'OpenSans_400Regular',
+        fontSize: 20,
+        lineHeight: 22,
+        color: colors.medium,
+        paddingLeft:10,
+        paddingRight:5,
+    },
+ 
 });
 
 const theme = StyleSheet.create({
@@ -108,6 +123,7 @@ const theme = StyleSheet.create({
         shadowRadius: 3.84,
         marginBottom: 20
     },
+ 
     textInput: {
         width: "100%",
         height: 47,
@@ -154,7 +170,72 @@ const theme = StyleSheet.create({
         height: "100%"
     }
     ,
+    modalContainer: {
+        width: dimensions.width,
+        height: dimensions.height,
+        backgroundColor: "#00000066",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    modalContent: {
+        width: 300,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "50%",
+        backgroundColor: colors.card,
+        borderRadius: 20,
+        padding: 20,
+        shadowColor: colors.dark,
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
 
+
+    },
+    modalItem: {
+        width: "100%",
+        backgroundColor: colors.medium,
+        padding: 10,
+        marginVertical: 5,
+        borderRadius: 5,
+        color: colors.light,
+        
+    },
+    selectInput: {
+        width: "90%",
+        marginTop: 5,
+        height: 50,
+        borderWidth: 1,
+        borderColor: colors.light,
+        borderRadius: 10,
+        padding: 10,
+    },
+    selectContainer :{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent:"space-between"
+    },
+    genresCard :{
+        backgroundColor: colors.card,
+        color: colors.light,
+        height: 60,
+        width: "100%",
+        borderRadius: 4,
+        alignItems: "center",
+        shadowColor: colors.dark,
+        shadowOffset: {
+            width: 0,
+            height: 4
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        marginBottom: 20
+    },
+    selectImageContainer: {
+        alignItems: "center",
+        justifyContent: "center",
+    }
 });
 
 

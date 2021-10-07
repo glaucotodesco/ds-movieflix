@@ -1,16 +1,9 @@
 import React from "react";
-import { Text, ImageSourcePropType, TouchableOpacity, Image, View, Dimensions } from "react-native";
+import { Text, TouchableOpacity, Image, View } from "react-native";
 import { Movie } from "../@types/Movie";
 import { text, theme } from "../styles";
 
-
-
-interface MovieProps extends Movie {
-    
-}
-
-
-const MovieCard = (movieProps: MovieProps) => {
+const MovieCard = (movieProps: Movie) => {
     return (
         <View style={theme.movieCard}>
             <TouchableOpacity >

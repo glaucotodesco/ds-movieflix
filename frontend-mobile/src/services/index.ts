@@ -7,10 +7,10 @@ export const api = axios.create({
 
 export const TOKEN = "Basic ZHNtb3ZpZWZsaXg6ZHNtb3ZpZWZsaXgxMjM=";
 
-export async function getMovies() {
+export async function getMovies(genreId : number = 0) {
     const token = await userToken();
     
-    const res = api.get('/movies',  {
+    const res = api.get(`/movies?genreId=${genreId}`,  {
        headers :{
           Authorization: `Bearer ${token}`
        }
