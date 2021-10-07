@@ -15,7 +15,21 @@ export async function getMovies() {
           Authorization: `Bearer ${token}`
        }
     });
- 
+    
+    return res;
+    
+ }
+
+
+ export async function getGenres() {
+    const token = await userToken();
+    
+    const res = api.get('/genres',  {
+       headers :{
+          Authorization: `Bearer ${token}`
+       }
+    });
+    
     return res;
     
  }

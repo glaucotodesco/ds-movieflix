@@ -4,6 +4,7 @@ import { color } from "react-native-reanimated";
 const dimensions = Dimensions.get('window');
 const imageHeight = Math.round(dimensions.width * 9 / 16);
 const imageWidth = dimensions.width;
+const cardWidth = dimensions.width-20;
 
 const colors = {
     primary: "#FFC700",
@@ -152,6 +153,8 @@ const theme = StyleSheet.create({
         padding: 10,
         height: "100%"
     }
+    ,
+
 });
 
 
@@ -174,6 +177,5 @@ const loginPage = StyleSheet.create({
         marginTop: 40
     },
 });
-
 
 export  {colors, theme, loginPage, text};
