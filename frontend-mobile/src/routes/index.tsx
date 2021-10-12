@@ -5,6 +5,7 @@ import { Login, Movies } from '../pages';
 import { colors, text } from '../styles';
 import { isAuthenticated } from '../services/auth';
 import { Logout } from '../components';
+import MovieDetailts from '../pages/MovieDetails';
          
 const Stack = createStackNavigator();
 
@@ -31,6 +32,8 @@ const Routes = () => {
         >
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Movies" component={Movies} />
+            <Stack.Screen name="Movie Details" component={MovieDetailts} />
+
         </Stack.Navigator>
     )
 

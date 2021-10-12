@@ -20,6 +20,17 @@ export async function getMovies(genreId : number = 0) {
     
  }
 
+ export async function getMovieById(id : number = 0) {
+   const token = await userToken();
+   
+   const res = api.get(`/movies/${id}`,  {
+      headers :{
+         Authorization: `Bearer ${token}`
+      }
+   });
+   
+   return res;
+}
 
  export async function getGenres() {
     const token = await userToken();

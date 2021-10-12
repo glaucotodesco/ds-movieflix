@@ -78,6 +78,17 @@ const text = StyleSheet.create({
         paddingLeft:10,
         paddingRight:5,
     },
+    movieSynoposis :{
+        fontFamily: 'OpenSans_400Regular',
+        color: colors.medium,
+        fontSize: 16,
+        lineHeight: 22,
+        textAlign:"justify",
+        fontWeight: "normal"
+
+
+
+    }
  
 });
 
@@ -123,7 +134,21 @@ const theme = StyleSheet.create({
         shadowRadius: 3.84,
         marginBottom: 20
     },
- 
+    movieDetails :{
+        backgroundColor: colors.card,
+        height: "100%",
+        width: "100%",
+        borderRadius: 4,
+        alignItems: "center",
+        shadowColor: colors.dark,
+        shadowOffset: {
+            width: 0,
+            height: 4
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        marginBottom: 20
+    },
     textInput: {
         width: "100%",
         height: 47,
@@ -177,6 +202,14 @@ const theme = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center"
     },
+    synoposisCard :{
+        borderWidth: 1,
+        borderColor: colors.light,
+        borderRadius: 10,
+        padding: 10,
+        marginTop: 16
+    },
+
     modalContent: {
         width: 300,
         justifyContent: "center",
