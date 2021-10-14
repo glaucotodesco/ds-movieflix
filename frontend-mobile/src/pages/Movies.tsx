@@ -6,7 +6,7 @@ import { Movie } from '../@types/Movie';
 import { Genre } from '../@types/Genre';
 import { getGenres, getMovies } from '../services';
 import arrow from '../assets/arrow.png';
-import close from '../assets/close.png';
+
 
 export default function Movies() {
 

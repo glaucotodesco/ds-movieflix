@@ -85,10 +85,17 @@ const text = StyleSheet.create({
         lineHeight: 22,
         textAlign:"justify",
         fontWeight: "normal"
-
-
-
+    },
+    reviewName :{
+        fontFamily: 'OpenSans_700Bold',
+        color: colors.light,
+        fontSize: 16,
+        lineHeight: 22,
+        textAlign:"justify",
+        fontWeight: "normal",
+        marginLeft: 15
     }
+
  
 });
 
@@ -136,7 +143,6 @@ const theme = StyleSheet.create({
     },
     movieDetails :{
         backgroundColor: colors.card,
-        height: "100%",
         width: "100%",
         borderRadius: 4,
         alignItems: "center",
@@ -192,7 +198,7 @@ const theme = StyleSheet.create({
     },
     movieTextContainer :{
         padding: 10,
-        height: "100%"
+        width: "98%"
     }
     ,
     modalContainer: {
@@ -202,12 +208,14 @@ const theme = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center"
     },
-    synoposisCard :{
+    borderCard :{
         borderWidth: 1,
-        borderColor: colors.light,
+        borderColor: colors.border,
         borderRadius: 10,
         padding: 10,
-        marginTop: 16
+        marginTop: 16,
+        marginLeft:5,
+        marginRight: 5
     },
 
     modalContent: {
@@ -268,7 +276,15 @@ const theme = StyleSheet.create({
     selectImageContainer: {
         alignItems: "center",
         justifyContent: "center",
+    },
+    nameReviewContainer :{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        marginLeft: 15
+
     }
+
 });
 
 
