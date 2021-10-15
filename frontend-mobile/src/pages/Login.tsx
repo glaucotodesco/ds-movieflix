@@ -1,19 +1,21 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
+
 import { AuthProps } from '../@types/AuthProps';
 import { isAuthenticated, login } from "../services/auth";
 import { theme, loginPage, text } from '../styles';
+import Toast from "react-native-tiny-toast";
 
 export default function Login() {
-
     const navigation = useNavigation();
     const [authenticaded, setAuthenticated] = useState(false);
     const [userInfo, setUserInfo] = useState <AuthProps> (
         {
-            username: "ana@gmail.com",
-            password: "123456"
+            username: "",
+            password: ""
         }
     );
 
@@ -31,8 +33,18 @@ export default function Login() {
 
 
     async function handleLogin() {
-        const data = await login(userInfo);
-        navigation.navigate("Movies");
+        try{
+            const data = await login(userInfo);
+            setUserInfo({
+                username: "",
+                password: ""
+            })
+            navigation.navigate("Movies");
+        }
+        catch(error){
+            Toast.show("Usuário ou senha inválido!");
+        }
+        
     }
     
     return (
@@ -65,7 +77,7 @@ export default function Login() {
                         />
                  
                     <TouchableOpacity 
-                        style={loginPage.loginButton} 
+                        style={theme.button} 
                         activeOpacity={0.8}
                         onPress={ () => handleLogin()}
                     >

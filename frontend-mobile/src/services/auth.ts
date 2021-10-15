@@ -1,14 +1,21 @@
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import queryString, { Stringifiable } from "query-string";
+import jwtDecode from "jwt-decode";
+import queryString from "query-string";
 import { AuthProps } from "../@types/AuthProps";
 import { api, TOKEN } from './index';
+
 
 type response = {
     data :{
         access_token: string;
     }
 }
+
+type token  = {
+    authorities: string[]
+}
+
 
 export async function login(userInfo: AuthProps){
     const data = queryString.stringify({
@@ -26,8 +33,16 @@ export async function login(userInfo: AuthProps){
     const { access_token } = result.data;
 
     setAsyncKeys("@token", access_token);
-
+   
     return result;
+}
+
+
+
+export async function hasRoleMember(){
+    const token  = await userToken();
+    const decToken: token = jwtDecode(`${token}`);
+    return decToken.authorities.some(role => role==="ROLE_MEMBER");
 }
 
 async function setAsyncKeys(key: string, value: string) {

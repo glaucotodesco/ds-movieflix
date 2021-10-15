@@ -25,8 +25,8 @@ const Routes = () => {
                     height: 68,
                     borderBottomWidth: 0
                 },
-                headerLeft: ()  => <HeaderText />,
-                headerRight: () => <Logout />
+                headerLeft:  ()  => <HeaderText />,
+                headerRight: ()  => <Logout />
             }}
 
         >

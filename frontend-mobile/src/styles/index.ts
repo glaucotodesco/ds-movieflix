@@ -32,6 +32,12 @@ const text = StyleSheet.create({
         fontSize: 20,
         lineHeight: 27
     },
+    reviewButtonTitle :{
+        fontFamily: 'OpenSans_700Bold',
+        fontSize: 16,
+        lineHeight: 22,
+        fontWeight:"bold"
+    },
     headerTitle :{
         fontSize: 24,
         lineHeight: 33,
@@ -46,7 +52,7 @@ const text = StyleSheet.create({
         lineHeight: 19,
         color: colors.dark
     },
-    movieTitle : {
+     movieTitle : {
         fontFamily: 'OpenSans_700Bold',
         fontSize: 20,
         lineHeight: 27,
@@ -283,9 +289,20 @@ const theme = StyleSheet.create({
         alignItems: "center",
         marginLeft: 15
 
-    }
+    },
 
+    button :{
+        backgroundColor: colors.primary,
+        height: 50,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 4,
+        marginTop: 40
+    },
 });
+
+
 
 
 const loginPage = StyleSheet.create({
@@ -297,15 +314,49 @@ const loginPage = StyleSheet.create({
     inputContainer:{
         marginBottom: 36
     },
-    loginButton :{
+});
+
+const movieDetailsPage = StyleSheet.create({
+    textInput: {
+        width: "100%",
+        height: 50,
+        borderWidth: 1,
+        borderColor: colors.border,
+        borderRadius: 4,
+        backgroundColor: colors.light,
+        fontFamily: 'OpenSans_400Regular',
+        fontSize: 16,
+        color: colors.medium
+    },
+    movieDetailsForm :{
+        backgroundColor: colors.card,
+        width: "100%",
+        borderRadius: 4,
+        alignItems: "center",
+        shadowColor: colors.medium,
+        shadowOffset: {
+            width: 0,
+            height: 4
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        marginBottom: 20,
+        paddingTop: 20,
+        paddingLeft: 17,
+        paddingRight: 17
+    },
+    button :{
         backgroundColor: colors.primary,
         height: 50,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 4,
-        marginTop: 40
+        width: "100%",
+        marginTop: 17, 
+        marginBottom: 20
+      
     },
 });
 
-export  {colors, theme, loginPage, text};
+export  {colors, theme, loginPage, movieDetailsPage, text};

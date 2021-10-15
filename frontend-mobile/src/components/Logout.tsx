@@ -1,6 +1,6 @@
-import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
 import { isAuthenticated, logout } from "../services/auth";
 import { text, theme } from "../styles";
@@ -22,7 +22,6 @@ const Logout = () => {
         logout();
         navigation.navigate("Login");
     }
-    
 
     return(
        authenticaded ? 
